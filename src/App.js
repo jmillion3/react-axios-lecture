@@ -1,25 +1,29 @@
-import logo from './logo.svg';
+import React, {Component} from 'react';
+import Card from './Card';
 import './App.css';
 
-function App() {
+// * Documentation on pokemon card api: https://docs.pokemontcg.io/
+// * Request url for all cards: https://api.pokemontcg.io/v1/cards
+
+
+class App extends Component {
+  constructor(){
+    this.state = {
+      cards: []
+    }
+  }
+
+  render(){
+    const mappedCards = this.state.cards.map( card => {
+      return <Card/>
+    })
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <h1>My Cool Card Collection: </h1>
+      {mappedCards}
     </div>
-  );
+    )
+  }
 }
 
 export default App;

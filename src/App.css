@@ -7,6 +7,15 @@
   pointer-events: none;
 }
 
+.card > img {
+  width: 150px;
+}
+
+.card > span {
+  font-size: 16px;
+  font-weight: 300;
+}
+
 @media (prefers-reduced-motion: no-preference) {
   .App-logo {
     animation: App-logo-spin infinite 20s linear;
